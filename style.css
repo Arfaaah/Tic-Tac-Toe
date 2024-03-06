@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, rgb(75, 74, 74), white);
+}
+
+.board{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 50px;
+}
+.board .dropBox{
+    position: relative;
+    height: 140px;
+    width: 140px;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 10px;
+    margin-left: 10px; */
+}
+.board .dropBox div{
+    pointer-events: none;
+    scale: 1.5;
+}
+.dropBox:nth-child(3),
+.dropBox:nth-child(6),
+.dropBox:nth-child(9){
+    border-right: none;
+}
+.dropBox:nth-child(7),
+.dropBox:nth-child(8),
+.dropBox:nth-child(9){
+    border-bottom: none;
+}
+.drag{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 420px;
+    width: 100px;
+    gap: 10px;
+    margin: 0 50px;
+    cursor: grab;
+}
+.drag .dragBox{
+    padding: 15px;
+    background-color: rgb(98, 98, 110);
+    border-radius: 3px;
+}
+.cross{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cross::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: white;
+    transform: rotate(45deg);
+}
+.cross::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    transform: rotate(45deg);
+}
+.circle{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 5px solid white;
+    border-radius: 50%;
+}
+.ctn{
+    position: absolute;
+    margin-bottom: -30px;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+    padding: 13px 40px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid white;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    background: transparent;
+}
+.ctn:hover{
+    background: white;
+    color: rgb(51, 48, 48);
+    cursor: pointer;
+    transition: .5s;
+}
+h1{
+    position: absolute;
+    margin-top: -30px;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    color: beige;
+    font-size: 38px;
+}
